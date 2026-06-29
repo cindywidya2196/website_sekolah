@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita Sekolah</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1d4ed8;
+            --dark: #173a8a;
+            --soft: #eef4ff;
+            --soft-2: #f8fafc;
+            --text: #1e293b;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --yellow: #facc15;
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: var(--text);
+            background: var(--soft-2);
+        }
+
+        .topbar {
+            background: var(--dark);
+            color: white;
+            font-size: 14px;
+            padding: 8px 0;
+        }
+
+        .navbar {
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            line-height: 1.1;
+        }
+
+        .logo-sekolah {
+            width: 46px;
+            height: 46px;
+            object-fit: contain;
+            margin-right: 10px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #334155;
+            transition: 0.2s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0%;
+            height: 2px;
+            background: var(--primary);
+            transition: 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+            transform: translateY(-1px);
+        }
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .section-text {
+            color: var(--muted);
+        }
+
+        .badge-school {
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .card {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark);
+        }
+
+        .footer {
+            background: #0f172a;
+            color: #fff;
+            padding: 25px 0;
+        }
+
+        .news-preview {
+            background: #eef4ff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-1">
+        <span>SDN 058424 Sei Gelugur</span>
+        <span>Kab. Langkat, Sumatera Utara</span>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#beranda">
+                <img src="image/237-design_Logo-SD-Sekolah-Dasar.png" alt="Logo SDN 058424 Sei Gelugur" class="logo-sekolah">
+                <span>SDN 058424<br><small class="text-secondary fw-normal">Sei Gelugur</small></span>
+            </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Buka menu navigasi">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link" href="profile.html">Profil</a></li>
+            <li class="nav-item"><a class="nav-link" href="guru.html">Tenaga Pengajar</a></li>
+            <li class="nav-item"><a class="nav-link" href="berita.html">Berita</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#kontak">Kontak</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <section>
+    <div class="container text-center">
+        <span class="badge-school">Berita</span>
+        <h2 class="section-title">Semua Berita Sekolah</h2>
+    </div>
+    </section>
+
+    <!-- LIST BERITA -->
+    <section>
+        <div class="container">
+            <div class="row g-4">
+                <!-- BERITA 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="image/literasi.jpeg" class="card-img-top">
+                        <div class="card-body">
+                            <h5>Literasi Pagi</h5>
+                            <p class="section-text">Kegiatan literasi di SDN 058424 Sei Gelugur merupakan program rutin yang dilaksanakan setiap pagi sebelum proses pembelajaran dimulai. Program ini bertujuan untuk meningkatkan kemampuan membaca, memahami teks, serta menumbuhkan minat baca siswa sejak usia dini. Dalam pelaksanaannya, siswa diarahkan untuk membaca buku cerita, buku pengetahuan, maupun bahan bacaan lainnya yang sesuai dengan tingkat perkembangan mereka. Kegiatan ini menjadi salah satu upaya sekolah dalam memperkuat budaya literasi di lingkungan pendidikan dasar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BERITA 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="image/lomba.jpeg" class="card-img-top">
+                        <div class="card-body">
+                            <h5>Perayaan 17 Agustus</h5>
+                            <p class="section-text">Peringatan Hari Ulang Tahun Kemerdekaan Republik Indonesia ke-79 di SDN 058424 Sei Gelugur dilaksanakan dengan penuh antusiasme oleh seluruh warga sekolah. Berbagai kegiatan lomba seperti balap karung, makan kerupuk, dan estafet dilaksanakan sebagai bentuk perayaan sekaligus sarana pembelajaran nilai-nilai kebangsaan. Melalui kegiatan ini, sekolah berupaya menanamkan nilai nasionalisme, kerja sama, serta sportivitas kepada peserta didik sejak usia dini.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BERITA 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="image/bersama.jpeg" class="card-img-top">
+                        <div class="card-body">
+                            <h5>Kunjungan Mahasiswa ITBI</h5>
+                            <p class="section-text">Dalam rangka kegiatan akademik, SDN 058424 Sei Gelugur menerima kunjungan dari mahasiswa Institut Teknologi dan Bisnis Indonesia (ITBI). Kunjungan ini dilakukan sebagai bagian dari proses observasi lapangan yang bertujuan untuk memahami secara langsung implementasi proses pembelajaran di tingkat sekolah dasar.
+                            Melalui kegiatan ini, mahasiswa mendapatkan kesempatan untuk mengamati aktivitas pembelajaran, interaksi guru dan siswa, serta kondisi lingkungan pendidikan. Selain itu, kegiatan ini juga menjadi bentuk kolaborasi antara institusi pendidikan tinggi dan sekolah dasar dalam mendukung peningkatan kualitas pendidikan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BERITA 4 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="image/senam.jpeg" class="card-img-top">
+                        <div class="card-body">
+                            <h5>Senam Pagi</h5>
+                            <p class="section-text">SDN 058424 Sei Gelugur secara rutin melaksanakan kegiatan senam pagi setiap hari Jumat sebagai bagian dari program pembiasaan hidup sehat di lingkungan sekolah. Kegiatan ini bertujuan untuk meningkatkan kebugaran jasmani siswa, memperkuat konsentrasi belajar, serta menanamkan pentingnya menjaga kesehatan sejak usia dini.
+                            Seluruh siswa mengikuti kegiatan senam dengan bimbingan guru di halaman sekolah dalam suasana yang tertib dan menyenangkan. Program ini juga menjadi salah satu upaya sekolah dalam menciptakan lingkungan belajar yang sehat, aktif, dan positif.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BERITA 5 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="image/kesenian.jpeg" class="card-img-top">
+                        <div class="card-body">
+                            <h5>Perlombaan Bakat Antar Kelas</h5>
+                            <p class="section-text">SDN 058424 Sei Gelugur menyelenggarakan kegiatan lomba bakat antar kelas sebagai bagian dari upaya sekolah dalam mengembangkan potensi dan kreativitas siswa. Kegiatan ini memberikan kesempatan kepada siswa untuk menampilkan bakat mereka dalam berbagai bidang seperti seni musik, tari, pidato, dan keterampilan lainnya.
+                            Selain sebagai ajang kompetisi, kegiatan ini juga bertujuan untuk menumbuhkan rasa percaya diri, sportivitas, serta mempererat kebersamaan antar siswa di lingkungan sekolah. Dengan adanya kegiatan ini, diharapkan setiap siswa dapat lebih termotivasi untuk mengembangkan bakat dan minat yang dimiliki.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BERITA 6 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="image/maulid1.jpeg" class="card-img-top">
+                        <div class="card-body">
+                            <h5>Merayakan Maulid Nabi</h5>
+                            <p class="section-text">SDN 058424 Sei Gelugur menyelenggarakan peringatan Maulid Nabi Muhammad SAW sebagai bagian dari kegiatan keagamaan sekolah yang bertujuan untuk memperkuat karakter religius peserta didik. Kegiatan ini diisi dengan pembacaan shalawat, ceramah agama, serta berbagai aktivitas yang menanamkan nilai-nilai keteladanan Rasulullah SAW.
+                            Melalui peringatan ini, diharapkan siswa dapat memahami dan meneladani akhlak mulia Nabi Muhammad SAW dalam kehidupan sehari-hari, baik di lingkungan sekolah maupun di luar sekolah. Kegiatan ini juga menjadi sarana mempererat kebersamaan seluruh warga sekolah dalam suasana religius dan penuh makna..</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer text-center">
+    <p>© 2026 SDN 058424 Sei Gelugur</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html> 

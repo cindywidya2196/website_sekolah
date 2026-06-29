@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDN 058424 Sei Gelugur</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style> 
+    :root {
+      --primary: #1d4ed8;
+      --dark: #173a8a;
+      --soft: #eef4ff;
+      --soft-2: #f8fafc;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --yellow: #facc15;
+    }
+
+    * {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: var(--soft-2);
+    }
+
+    .topbar {
+      background: var(--dark);
+      color: white;
+      font-size: 14px;
+      padding: 8px 0;
+    }
+
+    .navbar {
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand {
+      line-height: 1.1;
+    }
+
+    .logo-sekolah {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      margin-right: 10px;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: #334155;
+      transition: 0.2s ease;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 2px;
+      background: var(--primary);
+      transition: 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .carousel-item img {
+      height: 430px;
+      object-fit: cover;
+      filter: brightness(65%);
+    }
+
+    .carousel-caption {
+      bottom: 80px;
+    }
+
+    .carousel-caption h1,
+    .carousel-caption h2 {
+      font-weight: 700;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+
+    .carousel-caption p {
+      font-size: 18px;
+      color: #eef4ff;
+      max-width: 620px;
+    }
+
+    .section-padding {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      color: var(--dark);
+      font-weight: 700;
+    }
+
+    .section-text {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .section-intro {
+      background: white;
+      padding: 55px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      height: 100%;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .card-img-top {
+      height: 195px;
+      object-fit: cover;
+    }
+
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--soft);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .bg-soft {
+      background: var(--soft);
+    }
+
+    .badge-school {
+      background: #dbeafe;
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .ppdb-box {
+      background: linear-gradient(135deg, var(--primary), var(--dark));
+      color: white;
+      border-radius: 22px;
+      padding: 32px;
+    }
+
+    .ppdb-box p {
+      color: #e0e7ff;
+    }
+
+
+
+    .map-responsive {
+      position: relative;
+      width: 100%;
+      padding-top: 42%;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: #e2e8f0;
+    }
+
+    .map-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .footer {
+      background: #0f172a;
+      color: white;
+      padding: 24px 0;
+    }
+
+    .carousel-item {
+  position: relative;
+}
+
+      .carousel-item::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to right,
+          rgba(0,0,0,0.6),
+          rgba(0,0,0,0.2)
+        );
+        z-index: 1;
+      }
+
+      .carousel-item img {
+        position: relative;
+        z-index: 0;
+      }
+
+      .carousel-caption {
+        z-index: 2;
+      }
+
+      .wa-link {
+        color: #1d4ed8;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .wa-link:hover {
+        text-decoration: underline;
+      }
+
+    @media (max-width: 768px) {
+      .carousel-item img {
+        height: 360px;
+      }
+
+      .carousel-caption {
+        bottom: 42px;
+        text-align: center !important;
+      }
+
+      .carousel-caption p {
+        font-size: 15px;
+      }
+
+      .section-padding {
+        padding: 50px 0;
+      }
+
+      .map-responsive {
+        padding-top: 70%;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-1">
+      <span>SDN 058424 Sei Gelugur</span>
+      <span>Kab. Langkat, Sumatera Utara</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#beranda">
+        <img src="image/237-design_Logo-SD-Sekolah-Dasar.png" alt="Logo SDN 058424 Sei Gelugur" class="logo-sekolah">
+        <span>SDN 058424<br><small class="text-secondary fw-normal">Sei Gelugur</small></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Buka menu navigasi">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.html">Profil</a></li>
+          <li class="nav-item"><a class="nav-link" href="guru.html">Tenaga Pengajar</a></li>
+          <li class="nav-item"><a class="nav-link" href="berita.html">Berita</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carousel Beranda -->
+  <section id="beranda">
+    <div id="carouselSekolah" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselSekolah" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselSekolah" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselSekolah" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="image/gedung.jpeg" class="d-block w-100" alt="Lingkungan SDN 058424 Sei Gelugur">
+          <div class="carousel-caption text-start">
+            <span class="badge-school">Selamat Datang</span>
+            <h1>SDN 058424 Sei Gelugur</h1>
+            <p>Membangun peserta didik yang cerdas, santun, disiplin, dan peduli lingkungan sejak pendidikan dasar.</p>
+            <a href="#profil" class="btn btn-light fw-semibold">Lihat Profil Sekolah</a>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="image/senam.jpeg" class="d-block w-100" alt="Kegiatan belajar siswa sekolah dasar">
+          <div class="carousel-caption">
+            <span class="badge-school">Kegiatan Belajar</span>
+            <h2>Pembelajaran Aktif dan Menyenangkan</h2>
+            <p>Siswa didampingi untuk berkembang melalui literasi, numerasi, karakter, dan kegiatan sekolah yang dekat dengan kehidupan sehari-hari.</p>
+            <a href="#galeri" class="btn btn-light fw-semibold">Lihat Galeri</a>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="image/ppdb.png" class="d-block w-100" alt="Kebersamaan siswa di sekolah">
+          <div class="carousel-caption text-end">
+            <span class="badge-school">PPDB</span>
+            <h2>Informasi Pendaftaran Siswa Baru</h2>
+            <p>Calon orang tua siswa dapat menghubungi sekolah untuk memperoleh informasi jadwal, syarat, dan alur pendaftaran.</p>
+            <a href="#ppdb" class="btn btn-light fw-semibold">Informasi PPDB</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselSekolah" data-bs-slide="prev" aria-label="Slide sebelumnya">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselSekolah" data-bs-slide="next" aria-label="Slide berikutnya">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Deskripsi Singkat -->
+  <section class="section-intro text-center">
+    <div class="container">
+      <h2 class="section-title mb-3">Sekolah Dasar Negeri 058424 Sei Gelugur</h2>
+      <p class="section-text mx-auto mb-2" style="max-width: 760px;">
+        SDN 058424 Sei Gelugur merupakan satuan pendidikan dasar yang memberikan layanan pembelajaran bagi anak usia sekolah dasar di wilayah Sei Gelugur, Kabupaten Langkat.
+      </p>
+      <p class="section-text mx-auto mb-0" style="max-width: 760px;">
+        Sekolah mendukung pembentukan karakter siswa melalui budaya disiplin, sopan santun, kerja sama, kepedulian lingkungan, serta penguatan kemampuan membaca, menulis, dan berhitung.
+      </p>
+    </div>
+  </section>
+
+  <!-- Profil -->
+  <section class="section-padding" id="profil">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-md-6">
+          <img src="image/gedung.jpeg" alt="Gedung dan lingkungan sekolah" class="img-fluid rounded-4 shadow-sm">
+        </div>
+
+        <div class="col-md-6">
+          <span class="badge-school">Profil Sekolah</span>
+          <h2 class="section-title mb-3">Mengenal SDN 058424 Sei Gelugur</h2>
+          <p class="section-text">
+            SD Negeri 058424 Sei Gelugur, terletak di Dusun Sei Gelugur, Desa Sei Musam, Kecamatan Batang Serangan, Kabupaten Langkat, Provinsi Sumatera Utara, merupakan sekolah dasar negeri yang telah berdiri sejak tahun 1996. Dengan luas tanah 2.500 meter persegi, sekolah ini menampung para siswa yang belajar dengan sistem pagi selama enam hari dalam seminggu.
+          </p>
+          <p class="section-text mb-0">
+            SD Negeri 058424 Sei Gelugur memiliki akreditasi B, dengan nomor SK Akreditasi 740/BAP-SM/LL/XI/2016 yang diterbitkan pada tanggal 01 November 2016. Hal ini menandakan komitmen sekolah dalam memberikan pendidikan berkualitas dan sesuai standar nasional. Sekolah ini juga dilengkapi dengan akses internet dan sumber listrik dari PLN, menunjukkan upaya sekolah dalam menyediakan fasilitas belajar yang memadai bagi para siswa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Sekolah -->
+  <section class="section-padding" id="program">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge-school">Program Sekolah</span>
+        <h2 class="section-title">Fokus Pembelajaran</h2>
+        <p class="section-text">Beberapa fokus yang dapat ditampilkan pada website sekolah.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card p-4">
+            <div class="icon-box">A</div>
+            <h5>Literasi dan Numerasi</h5>
+            <p class="section-text mb-0">Penguatan kemampuan membaca, menulis, berhitung, dan berpikir logis sesuai tingkat perkembangan siswa.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card p-4">
+            <div class="icon-box">B</div>
+            <h5>Pendidikan Karakter</h5>
+            <p class="section-text mb-0">Pembiasaan sikap disiplin, hormat kepada guru, tanggung jawab, kerja sama, dan kepedulian terhadap teman.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card p-4">
+            <div class="icon-box">C</div>
+            <h5>Lingkungan Sekolah</h5>
+            <p class="section-text mb-0">Kegiatan menjaga kebersihan kelas, halaman sekolah, dan pembiasaan hidup bersih di lingkungan belajar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Berita -->
+<section class="section-padding bg-soft" id="berita">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge-school">Informasi Terkini</span>
+      <h2 class="section-title">Berita Sekolah</h2>
+      <p class="section-text">
+        Kumpulan informasi dan kegiatan terbaru di SDN 058424 Sei Gelugur.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Berita 1 -->
+      <div class="col-md-4">
+        <div class="card overflow-hidden">
+          <img src="image/literasi.jpeg" class="card-img-top" alt="Kegiatan Literasi">
+          <div class="card-body">
+            <h5>Peningkatan Literasi Siswa</h5>
+            <small class="text-muted">Juni 2026</small>
+            <p class="section-text mt-2">
+              Kegiatan literasi pagi di SDN 058424 Sei Gelugur dilaksanakan secara rutin untuk meningkatkan minat baca dan kemampuan literasi siswa sejak dini.            </p>
+            <a href="berita.html" class="wa-link">Baca selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Berita 2 -->
+      <div class="col-md-4">
+        <div class="card overflow-hidden">
+          <img src="image/maulid1.jpeg" class="card-img-top" alt="Kegiatan Belajar">
+          <div class="card-body">
+            <h5>Pembelajaran Aktif di Kelas</h5>
+            <small class="text-muted">Juni 2026</small>
+            <p class="section-text mt-2">
+              SDN 058424 Sei Gelugur memperingati Maulid Nabi Muhammad SAW dengan kegiatan keagamaan yang bertujuan menanamkan nilai keteladanan dan meningkatkan kecintaan siswa kepada Rasulullah.            </p>
+            <a href="berita.html" class="wa-link">Baca selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Berita 3 -->
+      <div class="col-md-4">
+        <div class="card overflow-hidden">
+          <img src="image/bersama.jpeg" class="card-img-top" alt="Kebersamaan Siswa">
+          <div class="card-body">
+            <h5>Kunjungan Mahasiswa ITBI</h5>
+            <small class="text-muted">Juni 2026</small>
+            <p class="section-text mt-2">
+              SDN 058424 Sei Gelugur menerima kunjungan mahasiswa ITBI dalam rangka observasi akademik untuk mempelajari proses pembelajaran di lingkungan sekolah dasar.            </p>
+            <a href="berita.html" class="wa-link">Baca selengkapnya</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="berita.html" class="btn btn-primary fw-semibold">
+        Berita Lainnya
+      </a>
+    </div>
+  </div>
+</section>
+
+  <!-- PPDB -->
+  <section class="section-padding" id="ppdb">
+  <div class="container">
+    <div class="ppdb-box">
+      <div class="row align-items-center g-4">
+        <div class="col-md-6">
+          <h2 class="fw-bold mb-2">Informasi Pendaftaran Siswa Baru</h2>
+          <p class="mb-3">
+            Informasi jadwal pendaftaran, persyaratan berkas, dan alur penerimaan siswa baru dapat diperoleh langsung melalui pihak sekolah.
+          </p>
+          <a href="https://wa.me/6285275345116?text=Halo%20saya%20ingin%20bertanya%20tentang%20PPDB%20SDN%20058424%20Sei%20Gelugur" target="_blank"class="btn btn-warning fw-semibold">
+            Chat WhatsApp
+          </a>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="image/ppdb.png"class="img-fluid rounded-4 shadow" style="max-height: 280px;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Kontak -->
+  <section class="section-padding bg-soft" id="kontak">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge-school">Kontak</span>
+        <h2 class="section-title">Kontak Sekolah</h2>
+        <p class="section-text">Hubungi sekolah untuk informasi lebih lanjut.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-5">
+          <div class="card p-4">
+            <h5 class="text-primary mb-3">Informasi Kontak</h5>
+            <p class="mb-2"><strong>Alamat:</strong> Sei Gelugur, Kabupaten Langkat, Sumatera Utara</p>
+            <p class="mb-2"><strong>Email:</strong> sdn058424@gmail.com</p>
+            <p class="mb-2">
+              <strong>Telepon:</strong>
+              <a href="https://wa.me/6285275345116" target="_blank">
+                +62 852-7534-5116 (WhatsApp)
+              </a>
+            </p>
+            <p class="mb-0"><strong>Jam Layanan:</strong> 07.30 sampai 13.00 WIB</p>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="card p-4">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-3">
+              <div>
+                <h5 class="text-primary mb-1">Lokasi Sekolah</h5>
+                <p class="section-text mb-0">Lihat lokasi SDN 058424 Sei Gelugur melalui peta berikut.</p>
+              </div>
+              <a href="https://www.google.com/maps/search/?api=1&query=SDN%20058424%20Sei%20Gelugur%20Kabupaten%20Langkat%20Sumatera%20Utara" target="_blank" rel="noopener" class="btn btn-outline-primary fw-semibold">
+                Buka di Google Maps
+              </a>
+            </div>
+
+            <div class="map-responsive">
+              <iframe
+                src="https://www.google.com/maps?q=SDN%20058424%20Sei%20Gelugur%20Kabupaten%20Langkat%20Sumatera%20Utara&output=embed"
+                title="Peta lokasi SDN 058424 Sei Gelugur"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <p class="mb-1">© 2026 SDN 058424 Sei Gelugur.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+
+    if (window.scrollY > 10) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
+</body>
+</html>
